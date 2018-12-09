@@ -1,6 +1,7 @@
 var topics=["Eating","Crying","Smiling","Angry","Sad","Hyper","Cooking","Driving","Sleeping","Chating","Travelling","Thinking","Reading"];
 var s="";
 var queryUrl;
+var l=10;
 function renderButton(){
     console.log(topics);
     $("#buttonDisplayArea").empty();
@@ -13,7 +14,7 @@ function displayGif(){
     $("#gifDisplayArea").empty();  
     console.log(this);
 s=$(this).attr("data-name");
-queryUrl="https://api.giphy.com/v1/gifs/search?q=" + s + "&api_key=003zWj7bkLEFl3HLOs0VQCIZzsx6RKHL&limit=10";
+queryUrl="https://api.giphy.com/v1/gifs/search?q=" + s + "&api_key=003zWj7bkLEFl3HLOs0VQCIZzsx6RKHL&limit=" +l;
 console.log(s);
 $.ajax({
     url:queryUrl,
@@ -51,9 +52,26 @@ function addNewValues(){
     renderButton();
 
 }
+function addNumberForGifs(){
+    l=10;
+    event.preventDefault();
+    l+=parseInt($("#textBoxForNumber").val());
+    console.log(l);
+    $("#textBoxForNumber").val("");
+    displayGif();
+}
+function resetGifValues(){
+    event.preventDefault();
+    l=10;
+    console.log(l);
+    displayGif();
+}
 
 $(document).on("click", ".buttonForActions", displayGif);
 $(document).on("click", "#submitButton", addNewValues);
+$(document).on("click", "#submitButtonForNumber", addNumberForGifs);
+$(document).on("click", "#resetButtonForNumber", resetGifValues);
+
 
 $(document).ready(function(){
     renderButton();
