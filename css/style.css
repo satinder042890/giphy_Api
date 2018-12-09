@@ -35,13 +35,25 @@ input[text],
     border:3px solid rgb(29, 63, 61);
     font-family: 'Signika', sans-serif;
 }
-#gifDisplayArea,
 #buttonDisplayArea{
     border: 3px solid black;
     margin:2%;
+    background: rgb(34, 33, 33);
 }
 .imageSize{
+    
+    margin-top:1%;
     height:200px;
-    width:30%;
-    margin:1%;
+    width:100%;
+}
+.imageBox{
+    margin-top:1%;
+    height:200px;
+    width:100%;
+}
+.mainBox{
+    height:200px;
+    width:27%;
+    float:left;
+    margin:2%;
 }
