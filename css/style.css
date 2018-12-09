@@ -23,7 +23,7 @@ input[text],
     box-sizing: border-box;
 }
 #textBox{
-    width:100%;
+    width:90%;
     border: 3px solid black;
 }
 #submitButton{
@@ -57,3 +57,30 @@ input[text],
     float:left;
     margin:2%;
 }
+ @media screen and (max-width: 640px){
+    .mainBox{
+        height:200px;
+        width:90%;
+        float:left;
+        margin:5%;
+    }
+    #label{
+        font-size: 1em;
+    }
+ }
+@media screen and (max-width:768px) and (min-width:640px){ 
+    .mainBox{
+        height:200px;
+        width:40%;
+        float:left;
+        margin:5%;
+    }
+} 
+@media screen and (max-width:980px) and (min-width:768px){ 
+    mainBox{
+        height:200px;
+        width:27%;
+        float:left;
+        margin:2%;
+    }
+} 

@@ -43,6 +43,7 @@ $.ajax({
 });
 }
 function addNewValues(){
+    event.preventDefault();
     var textValue=$("#textBox").val();
     console.log(textValue);
     topics.push(textValue);
