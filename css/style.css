@@ -31,7 +31,7 @@ input[text]{
 #submitButton,
 #submitButtonForNumber,
 #resetButtonForNumber{
-    padding: 1% 3% 1% 3%;
+    padding: 2% 3% 2% 3%;
     background: rgb(6, 75, 75);
     color:white;
     margin:2%;
