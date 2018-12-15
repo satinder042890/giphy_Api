@@ -41,7 +41,7 @@ input[text]{
 }
 #buttonDisplayArea{
     border: 3px solid black;
-    margin:2%;
+    margin:2% 1% 2% 1%;
     background: rgb(34, 33, 33);
 }
 .imageSize{
@@ -54,10 +54,13 @@ input[text]{
     margin-top:1%;
     height:200px;
     width:100%;
+    color:white;
+    padding:2%;
 }
 .mainBox{
     height:200px;
     width:27%;
+    background: rgb(29, 63, 61);
     float:left;
     margin:2%;
 }
