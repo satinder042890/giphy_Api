@@ -11,8 +11,8 @@ function renderButton(){
         $("#buttonDisplayArea").append(bt);
     }
 }
-//function 
-function displayGif(){
+//function to call giphy api
+function apiCall(){
     $("#gifDisplayArea").empty();  
     console.log(this);
     s=$(this).attr("data-name");
@@ -23,10 +23,11 @@ function displayGif(){
        method:"GET"
     }).then(function(response){
         console.log(response);
-        apiCall(response)
+        displayGif(response)
     });
 }
-function apiCall(response){
+//function to display gifs on screen when button is clicked
+function displayGif(response){
    for(var i=0; i<response.data.length;i++){
        var box=$("<div>").addClass("mainBox");
        var image=$("<img>").attr("src",response.data[i].images.downsized_still.url).addClass("imageSize").attr("data-name-still",response.data[i].images.downsized_still.url).attr("data-name-moving",response.data[i].images.downsized.url).attr("image-state","still");
@@ -48,6 +49,7 @@ function apiCall(response){
         }
     });
 }
+//function to add new buttons on screen by user
 function addNewValues(){
     event.preventDefault();
     var textValue=$("#textBox").val();
@@ -57,6 +59,7 @@ function addNewValues(){
     renderButton();
 
 }
+//function to add more gifs 
 function addNumberForGifs(){
     l=10;
     event.preventDefault();
@@ -65,14 +68,15 @@ function addNumberForGifs(){
     $("#textBoxForNumber").val("");
     // displayGif();
 }
+//function to reset the value of gifs to 10
 function resetGifValues(){
     event.preventDefault();
     l=10;
     console.log(l);
     // displayGif();
 }
-
-$(document).on("click", ".buttonForActions", displayGif);
+//click different functions according to different click events
+$(document).on("click", ".buttonForActions", apiCall);
 $(document).on("click", "#submitButton", addNewValues);
 $(document).on("click", "#submitButtonForNumber", addNumberForGifs);
 $(document).on("click", "#resetButtonForNumber", resetGifValues);
